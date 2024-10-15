@@ -70,7 +70,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between py-6">
-      <span className="font-black text-3xl">C.</span>
+      <a className="font-black text-3xl" href='/'>C.</a>
 
       {/* Hamburger menu icon for smaller devices */}
       <div className="md:hidden" ref={buttonRef}>

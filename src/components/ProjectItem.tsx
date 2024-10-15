@@ -1,5 +1,9 @@
-export default function ProjectItem() {
+import { Project } from "../@types";
+
+export default function ProjectItem({ id }: Project) {
   return (
-    <div className="skeleton border h-64 w-full bg-[#E9E9E9]" />
+    <a href={`/project/${id}`}>
+      <div className="skeleton border border-black h-64 w-full bg-[rgb(233,233,233)]" />
+    </a>
   );
 }

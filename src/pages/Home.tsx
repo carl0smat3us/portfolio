@@ -5,10 +5,11 @@ import Header from "../components/Header";
 import ProjectItem from "../components/ProjectItem";
 
 import { LinkedinLogo, TwitterLogo, DribbbleLogo } from "@phosphor-icons/react";
+import { PROJECTS } from "../constants";
 
 export default function Home() {
   // Total number of available projects (for example, 10)
-  const totalProjects = 10;
+  const totalProjects = PROJECTS.length;
   
   // State that controls how many projects are initially displayed
   const [visibleProjects, setVisibleProjects] = useState(4);
@@ -59,8 +60,8 @@ export default function Home() {
 
         {/* Rendering the projects */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[10vh]">
-          {Array.from({ length: visibleProjects }).map((_, index) => (
-            <ProjectItem key={index} />
+          {Array.from(PROJECTS).map((project, index) => (
+            <ProjectItem {...project} key={index} />
           ))}
         </div>
 
