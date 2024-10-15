@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
+}
+
+html, body, section, article {
   overflow-x: hidden;
 }
 
