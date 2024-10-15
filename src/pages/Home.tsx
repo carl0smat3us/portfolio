@@ -22,7 +22,10 @@ export default function Home() {
   return (
     <section className="custom-width">
       <Header />
-      <article className="h-[50vh] mt-[20vh] mb-[50vh] flex items-center">
+
+      <div className="mb-[20vh]" />
+
+      <article className="h-[50vh] mb-[50vh] flex items-center">
         <div>
           <span>Hello I&rsquo;m</span>
           <h1 className="font-semibold text-4xl mb-6">Carlos Mateus</h1>
@@ -52,14 +55,14 @@ export default function Home() {
         </div>
       </article>
 
-      <article id="projects" className="flex flex-col justify-center py-12">
-        <div>
+      <article id="projects" className="flex flex-col justify-center py-12 mb-[20vh]">
+        <div className="mb-8">
           <h2 className="font-semibold text-3xl">Last works</h2>
           <p className="text-lg">See what I've been working on lately</p>
         </div>
 
         {/* Rendering the projects */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[10vh]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-[10vh]">
           {Array.from(PROJECTS).map((project, index) => (
             <ProjectItem {...project} key={index} />
           ))}
@@ -80,15 +83,15 @@ export default function Home() {
       </article>
 
 
-      <article id="contact" className="mt-[20vh] flex flex-wrap justify-between py-12">
+      <article id="contact" className="lg:flex flex-wrap justify-between py-12">
         <div className="flex flex-col gap-[25px]">
-          <h2 className="font-semibold text-3xl">
+          <h2 className="font-semibold text-3xl lg:w-[520px]">
             Let's build an incredible project together.
           </h2>
-          <p className="text-lg w-[300px]">
+          <p className="text-lg lg:w-[300px]">
             Fill in all the fields so we can contact you as quickly as possible.
           </p>
-          <p className="text-lg w-[300px]">
+          <p className="text-lg lg:w-[300px]">
             Or simply send me a message at{" "}
             <a href="mailto:hi@carlosmateus.com">
               <u>hi@carlosmateus.com</u>
