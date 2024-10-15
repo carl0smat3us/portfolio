@@ -6,7 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body, section, article {
+html, body {
   overflow-x: hidden;
 }
 
