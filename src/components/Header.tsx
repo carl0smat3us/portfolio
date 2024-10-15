@@ -1,55 +1,56 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import { useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 
 export default function Header() {
   const location = useLocation();
-  const pathname = location.pathname;
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control menu visibility
-  const menuRef = useRef<HTMLDivElement | null>(null); // Ref for the menu element
-  const buttonRef = useRef<HTMLDivElement | null>(null); // Ref for the hamburger button
+  const { pathname, hash } = location;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLDivElement | null>(null);
 
   const HEADER_LINKS = [
-    {
-      label: 'home',
-      url: '/'
-    },
-    {
-      label: 'about me',
-      url: '#about'
-    },
-    {
-      label: 'projects',
-      url: '#projects'
-    },
-    {
-      label: 'experiences',
-      url: '/experiences'
-    },
-    {
-      label: 'contact',
-      url: '#contact'
-    }
+    { label: 'home', url: '/' },
+    { label: 'about me', url: '/#about' },
+    { label: 'projects', url: '/#projects' },
+    { label: 'experiences', url: '/experiences' },
+    { label: 'contact', url: '/#contact' }
   ];
+
+  const scrollToHash = useCallback((hash: string) => {
+    if (hash) {
+      const targetId = hash.substring(1); // Remove '#' from the hash
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+
+        // Remove the hash from the URL
+        window.history.pushState(null, '', pathname); // Update URL without reloading the page
+      }
+    }
+  }, [pathname])
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, url: string) => {
     if (url.startsWith('#')) {
       event.preventDefault(); // Prevent default anchor link behavior
-      const targetId = url.substring(1); // Remove the '#' from the URL
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target element
-      }
+      scrollToHash(url);
     }
     setIsMenuOpen(false); // Close the menu after clicking a link
   };
 
-  // Close menu when clicking outside of it
+  // Scroll to the element when the hash changes
+  useEffect(() => {
+    if (hash) {
+      scrollToHash(hash);
+    }
+  }, [hash, pathname, scrollToHash]);
+
+  // Close the menu when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if the click is outside of the menu or hamburger button
+      // Check if the click is outside of the menu or the hamburger button
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target as Node) &&
