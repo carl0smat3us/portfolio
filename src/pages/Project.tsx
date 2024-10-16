@@ -7,7 +7,7 @@ export default function Project() {
   const navigate = useNavigate();
   const { id } = useParams()
 
-  const project = PROJECTS.find((p =>  p.id === Number(id)))
+  const project = PROJECTS.find((p =>  p.id === id))
 
   return (
     <section className="custom-width">
@@ -38,10 +38,10 @@ export default function Project() {
         </article>
         <article className="w-full lg:w-[55%]">
           {
-            project?.photos.map(() => (
-              <div className="mb-2">
-                <img className="w-full" src={project?.photos[0].path}/>
-                <p className="text-gray-400 mt-2">{project?.photos[0].label}</p>
+            project?.photos.map((photo) => (
+              <div className="mb-10">
+                <img className="w-full mb-4" src={photo.path}/>
+                <p className="text-gray-400">{photo.label}</p>
               </div>
             ))
           }
