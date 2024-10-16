@@ -13,6 +13,14 @@ export const PROJECTS:Project[] = [
       {
         path: "/projects/privadodomicilio/home.png",
         label: "Home"
+      },
+      {
+        path: "/projects/privadodomicilio/q_and_a.png",
+        label: "Questions and answers"
+      },
+      {
+        path: "/projects/privadodomicilio/contact.png",
+        label: "Contact page"
       }
     ],
     preview: "https://www.privadodomicilio.com/"

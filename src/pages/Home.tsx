@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectItem from "../components/ProjectItem";
 
-import { LinkedinLogo, TwitterLogo, DribbbleLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, DribbbleLogo, GithubLogo } from "@phosphor-icons/react";
 import { PROJECTS } from "../constants";
 
 export default function Home() {
@@ -101,8 +101,12 @@ export default function Home() {
             <h2 className="font-semibold text-xl w-[400px]">Social networks</h2>
             <div className="flex gap-2 mt-2">
               <LinkedinLogo size={25} />
-              <TwitterLogo size={25} />
-              <DribbbleLogo size={25} />
+              <a href="https://github.com/kamajus3">
+                <GithubLogo size={25} />
+              </a>
+              <a href="https://dribbble.com/carlosmateus">
+                <DribbbleLogo size={25} />
+              </a>
             </div>
           </div>
         </div>
