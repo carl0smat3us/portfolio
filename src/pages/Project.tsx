@@ -20,7 +20,7 @@ export default function Project() {
       </button>
       <div className="flex flex-wrap justify-between">
         <article className={clsx("w-full lg:w-[42%]", {
-          "lg:w-[54%]": project?.type === "mobile"
+          "lg:w-[50%]": project?.type === "mobile"
         })}>
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
@@ -43,7 +43,7 @@ export default function Project() {
           }
         </article>
         <article className={clsx("w-full lg:w-[50%]", {
-          "lg:w-[30%]": project?.type === "mobile"
+          "lg:w-[28%]": project?.type === "mobile"
         })}>
           {
             project?.photos.map((photo) => (
