@@ -43,7 +43,7 @@ export default function Project() {
           }
         </article>
         <article className={clsx("w-full lg:w-[50%]", {
-          "lg:w-[28%]": project?.type === "mobile"
+          "lg:w-[23%]": project?.type === "mobile"
         })}>
           {
             project?.photos.map((photo) => (
