@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { CaretLeft } from "@phosphor-icons/react";
 import { PROJECTS } from "../constants";
+import clsx from "clsx";
 
 export default function Project() {
   const navigate = useNavigate();
@@ -18,7 +19,9 @@ export default function Project() {
         <CaretLeft size={20} className="mt-12" />
       </button>
       <div className="flex flex-wrap justify-between">
-        <article className="w-full lg:w-[42%]">
+        <article className={clsx("w-full lg:w-[42%]", {
+          "lg:w-[54%]": project?.type === "mobile"
+        })}>
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
           <article className="mt-5">
@@ -39,7 +42,9 @@ export default function Project() {
             </article>
           }
         </article>
-        <article className="w-full lg:w-[55%]">
+        <article className={clsx("w-full lg:w-[50%]", {
+          "lg:w-[30%]": project?.type === "mobile"
+        })}>
           {
             project?.photos.map((photo) => (
               <div className="mb-10">
