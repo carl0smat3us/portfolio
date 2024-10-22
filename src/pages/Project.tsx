@@ -19,8 +19,9 @@ export default function Project() {
         <CaretLeft size={20} className="mt-12" />
       </button>
       <div className="flex flex-wrap justify-between">
-        <article className={clsx("w-full lg:w-[42%]", {
-          "lg:w-[50%]": project?.type === "mobile"
+        <article className={clsx("bg-white", {
+          "lg:w-[42%]": project?.type === "web",
+          "lg:w-[60%]": project?.type === "mobile"
         })}>
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
@@ -42,13 +43,13 @@ export default function Project() {
             </article>
           }
         </article>
-        <article className={clsx("w-full lg:w-[50%]", {
-          "lg:w-[23%]": project?.type === "mobile"
+        <article className={clsx("bg-white", {
+          "lg:w-[50%]": project?.type === "web",
+          "lg:w-[34%]": project?.type === "mobile"
         })}>
-          {
-            project?.photos.map((photo) => (
+          {project?.photos.map((photo) => (
               <div className="mb-10">
-                <img className="w-full mb-4" src={photo.path}/>
+                <img className="mb-4" src={photo.path}/>
                 <p className="text-gray-400">{photo.label}</p>
               </div>
             ))
