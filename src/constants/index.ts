@@ -8,6 +8,7 @@ export const PROJECTS:Project[] = [
     skills: [
       "React JS", "Next.JS", "Tailwind CSS", "Swiper JS", "Javascript", "TypeScript"
     ],
+    type: "web",
     cover: "/projects/privadodomicilio/cover.png",
     photos: [
       {
@@ -23,7 +24,7 @@ export const PROJECTS:Project[] = [
         label: "Contact page"
       }
     ],
-    preview: "https://www.privadodomicilio.com/"
+    preview: "https://www.privadodomicilio.com"
   },
   {
     id: "raciuscare",
@@ -32,6 +33,7 @@ export const PROJECTS:Project[] = [
     skills: [
       "Ecommerce", "Ecommerce Website", "Firebase", "Swiper JS", "JavaScript", "Google Cloud Platform", "TypeScript", "React", "Python", "Flask"
     ],
+    type: "web",
     cover: "/projects/raciuscare/cover.png",
     photos: [
       {
@@ -55,10 +57,11 @@ export const PROJECTS:Project[] = [
         label: "Admin dashboard"
       }
     ],
-    preview: "https://www.raciuscare.com/"
+    preview: "https://www.raciuscare.com"
   },
   {
     id: "beeva",
+    type: "mobile",
     title: "Beeva",
     description: "Beeva is an app that makes it easy to sell and rent homes. Developed with React Native, Expo & Supabase, it offers an intuitive and efficient experience for finding and negotiating properties.",
     skills: [
@@ -107,5 +110,6 @@ export const PROJECTS:Project[] = [
         label: "Security"
       }
     ],
-  }
+    preview: "https://www.github.com/kamajus3/beeva.git"
+  },
 ]

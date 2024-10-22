@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   skills: string[];
   cover: string
+  type: "mobile" | "web"
   photos: {
     path: string;
     label: string;
