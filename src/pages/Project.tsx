@@ -31,10 +31,13 @@ export default function Project() {
               ))}
             </div>
           </article>
-          <article className="mt-5 mb-10">
-            <h2 className="text-xl font-medium">Preview</h2>
-            <a className="mt-6 text-violet-400 underline" href={project?.preview} target="_blank">{project?.preview}</a>
-          </article>
+          {
+            project?.preview &&
+            <article className="mt-5 mb-10">
+              <h2 className="text-xl font-medium">Preview</h2>
+              <a className="mt-6 text-violet-400 underline" href={project?.preview} target="_blank">{project?.preview}</a>
+            </article>
+          }
         </article>
         <article className="w-full lg:w-[55%]">
           {

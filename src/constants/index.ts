@@ -56,5 +56,56 @@ export const PROJECTS:Project[] = [
       }
     ],
     preview: "https://www.raciuscare.com/"
+  },
+  {
+    id: "beeva",
+    title: "Beeva",
+    description: "Beeva is an app that makes it easy to sell and rent homes. Developed with React Native, Expo & Supabase, it offers an intuitive and efficient experience for finding and negotiating properties.",
+    skills: [
+      "React", "React Native", "Expo", "Supabase", "Android", "PostgreSQL", "Figma", "Tailwind CSS", "NativeWind"
+    ],
+    cover: "/projects/beeva/cover.svg",
+    photos: [
+      {
+        path: "/projects/beeva/home.png",
+        label: "Home"
+      },
+      {
+        path: "/projects/beeva/notifications.png",
+        label: "Notifications"
+      },
+      {
+        path: "/projects/beeva/residence_detail.png",
+        label: "Residence"
+      },
+      {
+        path: "/projects/beeva/residence_detail_2.png",
+        label: "Residence part two"
+      },
+      {
+        path: "/projects/beeva/create.png",
+        label: "Create"
+      },
+      {
+        path: "/projects/beeva/create-2.png",
+        label: "Create part two"
+      },
+      {
+        path: "/projects/beeva/saved.png",
+        label: "Saveds"
+      },
+      {
+        path: "/projects/beeva/wishes.png",
+        label: "Wishes"
+      },
+      {
+        path: "/projects/beeva/settings.png",
+        label: "Settings"
+      },
+      {
+        path: "/projects/beeva/security.png",
+        label: "Security"
+      }
+    ],
   }
 ]
