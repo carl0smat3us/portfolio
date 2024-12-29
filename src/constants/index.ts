@@ -67,7 +67,7 @@ export const PROJECTS:Project[] = [
     skills: [
       "React", "React Native", "Expo", "Supabase", "Android", "PostgreSQL", "Figma", "Tailwind CSS", "NativeWind"
     ],
-    cover: "/projects/beeva/cover.svg",
+    cover: "/projects/beeva/cover.png",
     photos: [
       {
         path: "/projects/beeva/home.png",
