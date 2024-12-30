@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { List, X } from '@phosphor-icons/react';
-import { useLocation } from 'react-router-dom';
-import clsx from 'clsx';
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { List, X } from '@phosphor-icons/react'
+import { NavLink, useLocation } from 'react-router-dom'
+import clsx from 'clsx'
 
 export default function Header() {
-  const location = useLocation();
-  const { pathname, hash } = location;
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement | null>(null);
-  const buttonRef = useRef<HTMLDivElement | null>(null);
+  const location = useLocation()
+  const { pathname, hash } = location
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+  const buttonRef = useRef<HTMLDivElement | null>(null)
 
   const HEADER_LINKS = [
     { label: 'home', url: '/' },
@@ -16,36 +16,36 @@ export default function Header() {
     { label: 'projects', url: '/#projects' },
     { label: 'experiences', url: '/experiences' },
     { label: 'contact', url: '/#contact' }
-  ];
+  ]
 
   const scrollToHash = useCallback((hash: string) => {
     if (hash) {
-      const targetId = hash.substring(1); // Remove '#' from the hash
-      const targetElement = document.getElementById(targetId);
+      const targetId = hash.substring(1) // Remove '#' from the hash
+      const targetElement = document.getElementById(targetId)
 
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        targetElement.scrollIntoView({ behavior: 'smooth' })
 
         // Remove the hash from the URL
-        window.history.pushState(null, '', pathname); // Update URL without reloading the page
+        window.history.pushState(null, '', pathname) // Update URL without reloading the page
       }
     }
   }, [pathname])
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, url: string) => {
     if (url.startsWith('#')) {
-      event.preventDefault(); // Prevent default anchor link behavior
-      scrollToHash(url);
+      event.preventDefault() // Prevent default anchor link behavior
+      scrollToHash(url)
     }
-    setIsMenuOpen(false); // Close the menu after clicking a link
-  };
+    setIsMenuOpen(false) // Close the menu after clicking a link
+  }
 
   // Scroll to the element when the hash changes
   useEffect(() => {
     if (hash) {
-      scrollToHash(hash);
+      scrollToHash(hash)
     }
-  }, [hash, pathname, scrollToHash]);
+  }, [hash, pathname, scrollToHash])
 
   // Close the menu when clicking outside of it
   useEffect(() => {
@@ -57,20 +57,20 @@ export default function Header() {
         buttonRef.current &&
         !buttonRef.current.contains(event.target as Node)
       ) {
-        setIsMenuOpen(false);
+        setIsMenuOpen(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside); // Add event listener
+    document.addEventListener('mousedown', handleClickOutside) // Add event listener
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside); // Clean up event listener
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside) // Clean up event listener
+    }
+  }, [])
 
   return (
     <header className="flex items-center justify-between py-6">
-      <a className="font-black text-3xl" href='/'>C.</a>
+      <NavLink className="font-black text-3xl" to='/'>C.</NavLink>
 
       {/* Hamburger menu icon for smaller devices */}
       <div className="md:hidden" ref={buttonRef}>
@@ -83,7 +83,7 @@ export default function Header() {
       <nav
         ref={menuRef} // Ref for the menu
         className={clsx(
-          "flex-col md:flex md:flex-row gap-4 font-medium absolute md:static top-16 left-0 right-0 px-[50px] md:px-0 bg-white py-8 md:p-0 transition-transform",
+          'flex-col md:flex md:flex-row gap-4 font-medium absolute md:static top-16 left-0 right-0 px-[50px] md:px-0 bg-white py-8 md:p-0 transition-transform',
           {
             hidden: !isMenuOpen, // Hide menu when `isMenuOpen` is false
             flex: isMenuOpen, // Show menu when `isMenuOpen` is true
@@ -91,18 +91,18 @@ export default function Header() {
         )}
       >
         {HEADER_LINKS.map((link) => (
-          <a
+          <NavLink
             key={link.label}
-            href={link.url}
+            to={link.url}
             onClick={(e) => handleLinkClick(e, link.url)} // Call handleLinkClick on link click
             className={clsx('text-black', {
               'text-gray-400': link.url === pathname
             })}
           >
             {link.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </header>
-  );
+  )
 }

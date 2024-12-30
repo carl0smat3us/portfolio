@@ -1,11 +1,11 @@
-import { useNavigate, useParams } from "react-router-dom";
-import Header from "../components/Header";
-import { CaretLeft } from "@phosphor-icons/react";
-import { PROJECTS } from "../constants";
-import clsx from "clsx";
+import { useNavigate, useParams } from 'react-router-dom'
+import Header from '../components/Header'
+import { CaretLeft } from '@phosphor-icons/react'
+import { PROJECTS } from '../constants'
+import clsx from 'clsx'
 
 export default function Project() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const { id } = useParams()
 
   const project = PROJECTS.find((p =>  p.id === id))
@@ -14,14 +14,14 @@ export default function Project() {
     <section className="custom-width">
       <Header />
       <button onClick={() => {
-        navigate("/#projects")
+        navigate('/#projects')
       }}>
         <CaretLeft size={20} className="mt-12" />
       </button>
       <div className="flex flex-wrap justify-between">
-        <article className={clsx("bg-white", {
-          "lg:w-[42%]": project?.type === "web",
-          "lg:w-[60%]": project?.type === "mobile"
+        <article className={clsx('bg-white', {
+          'lg:w-[42%]': project?.type === 'web',
+          'lg:w-[60%]': project?.type === 'mobile'
         })}>
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
@@ -43,9 +43,9 @@ export default function Project() {
             </article>
           }
         </article>
-        <article className={clsx("bg-white", {
-          "lg:w-[50%]": project?.type === "web",
-          "lg:w-[34%]": project?.type === "mobile"
+        <article className={clsx('bg-white', {
+          'lg:w-[50%]': project?.type === 'web',
+          'lg:w-[34%]': project?.type === 'mobile'
         })}>
           {project?.photos.map((photo) => (
               <div className="mb-10">

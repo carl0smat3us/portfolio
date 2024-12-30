@@ -1,4 +1,4 @@
-import { Project } from "../@types";
+import { Project } from '../@types'
 
 export default function ProjectItem({ id, cover }: Project) {
   return (
@@ -7,5 +7,5 @@ export default function ProjectItem({ id, cover }: Project) {
         backgroundImage: `url(${cover})`
       }}/>
     </a>
-  );
+  )
 }
