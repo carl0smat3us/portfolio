@@ -1,13 +1,14 @@
 export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  skills: string[];
+  id: string
+  title: string
+  creationYear: number
+  description: string
+  skills: string[]
   cover: string
-  type: 'mobile' | 'web'
+  type: "mobile" | "web"
   photos: {
-    path: string;
-    label: string;
-}[]
+    path: string
+    label: string
+  }[]
   preview?: string
 }
