@@ -72,7 +72,7 @@ export default function Projects() {
         id="projects"
         className="flex flex-col justify-center py-12 mb-[20vh]"
       >
-        <div className="w-full mb-8 flex justify-between items-center">
+        <div className="w-full mb-8 flex justify-between lg:items-center max-lg:flex-col">
           <p className="text-lg">See what I've been working on lately</p>
 
           <div className="flex gap-3">
