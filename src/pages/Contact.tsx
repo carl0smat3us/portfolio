@@ -31,7 +31,7 @@ export default function Contact() {
           <div>
             <h2 className="font-semibold text-xl w-[400px]">Social networks</h2>
             <div className="flex gap-2 mt-2">
-              <a href="https://github.com/kamajus3">
+              <a href="https://github.com/kamajus">
                 <GithubLogo size={25} />
               </a>
               <a href="https://dribbble.com/carlosmateus">
