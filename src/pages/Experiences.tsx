@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
 
 export default function Experiences() {
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus | Experiences</title>
+      </Helmet>
+
       <Header />
+
       <div className="mt-[7%]">
         <h1 className="font-semibold text-4xl mt-6">Work experiences</h1>
         <p className="text-gray-500">Peruse my employment background.</p>

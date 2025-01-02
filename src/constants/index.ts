@@ -3,7 +3,7 @@ import { Project } from "../@types"
 export const PROJECTS: Project[] = [
   {
     id: "privadodomicilio",
-    title: "Privado Domicílio lading page",
+    title: "Privado Domicílio",
     creationYear: 2023,
     type: "web",
     description:

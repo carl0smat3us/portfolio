@@ -5,11 +5,16 @@ import {
 } from "@phosphor-icons/react"
 import Header from "../components/Header"
 import ContactForm from "../components/ContactForm"
+import { Helmet } from "react-helmet-async"
 
 export default function Contact() {
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus | Contact</title>
+      </Helmet>
       <Header />
+
       <article
         id="contact"
         className="lg:flex flex-wrap justify-between py-12 mt-16"

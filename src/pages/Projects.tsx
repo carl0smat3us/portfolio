@@ -5,6 +5,7 @@ import ProjectItem from "../components/ProjectItem"
 import DropDown from "../components/DropDown"
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Helmet } from "react-helmet-async"
 
 interface IOption {
   value: string
@@ -66,6 +67,10 @@ export default function Projects() {
 
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus | Projects</title>
+      </Helmet>
+
       <Header />
 
       <article
@@ -121,8 +126,8 @@ export default function Projects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-[10vh]">
-          {filteredProjects.map((project, index) => (
-            <ProjectItem {...project} key={index} />
+          {filteredProjects.map((project) => (
+            <ProjectItem {...project} key={project.id} />
           ))}
         </div>
       </article>
