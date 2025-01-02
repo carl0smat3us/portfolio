@@ -31,7 +31,6 @@ export const PROJECTS: Project[] = [
         label: "Contact page",
       },
     ],
-    preview: "https://www.privadodomicilio.com",
   },
   {
     id: "raciuscare",
@@ -75,7 +74,6 @@ export const PROJECTS: Project[] = [
         label: "Admin dashboard",
       },
     ],
-    preview: "https://www.raciuscare.com",
   },
   {
     id: "beeva",
@@ -138,6 +136,6 @@ export const PROJECTS: Project[] = [
         label: "Security",
       },
     ],
-    preview: "https://www.github.com/kamajus3/beeva.git",
+    preview: "https://www.github.com/kamajus/beeva.git",
   },
 ]

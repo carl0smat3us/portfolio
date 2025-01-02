@@ -15,14 +15,13 @@ export default function Project() {
       <Helmet>
         <title>Carlos Mateus | {project?.title}</title>
         <meta name="description" content={project?.description} />
-
-        {/* Facebook Meta Tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Carlos Mateus" />
+        <meta
+          property="og:title"
+          content={`Carlos Mateus | ${project?.title}`}
+        />
         <meta property="og:description" content={project?.description} />
         <meta property="og:image" content={project?.cover} />
-
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -45,6 +44,8 @@ export default function Project() {
             "lg:w-[60%]": project?.type === "mobile",
           })}
         >
+          <img className="w-full" src={project?.cover} />
+
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
           <article className="mt-5">
@@ -81,7 +82,7 @@ export default function Project() {
         >
           {project?.photos.map((photo, index) => (
             <div key={index} className="mb-10">
-              <img className="mb-4" src={photo.path} />
+              <img className="mb-4" alt={photo.label} src={photo.path} />
               <p className="text-gray-400">{photo.label}</p>
             </div>
           ))}
