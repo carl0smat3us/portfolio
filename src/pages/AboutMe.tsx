@@ -11,7 +11,7 @@ export default function AboutMe() {
       >
         <img
           className="w-[45%]"
-          src="https://www.upwork.com/profile-portraits/c1yW-5KOvVDFAYK5ed6sjDDvctGnAduoRntVIKnheenBHXWkw2ZahtoU1LaSCQhZ4z"
+          src="https://placehold.co/400x400"
           alt="Carlos Mateus"
         />
         <div className="w-[45%]">
