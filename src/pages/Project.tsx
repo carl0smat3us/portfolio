@@ -32,11 +32,13 @@ export default function Project() {
       </Helmet>
 
       <Header />
+
       <NavLink to="/projects">
-        <button>
+        <button className="mb-8">
           <CaretLeft size={20} className="mt-12" />
         </button>
       </NavLink>
+
       <div className="flex flex-wrap justify-between">
         <article
           className={clsx("bg-white", {
@@ -61,8 +63,11 @@ export default function Project() {
               ))}
             </div>
           </article>
+
+          <div className="mt-5 mb-10" />
+
           {project?.preview && (
-            <article className="mt-5 mb-10">
+            <article>
               <h2 className="text-xl font-medium">Preview</h2>
               <a
                 className="mt-6 text-violet-400 underline"
