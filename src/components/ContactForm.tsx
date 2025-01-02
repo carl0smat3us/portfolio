@@ -1,7 +1,9 @@
 import * as z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useState } from "react"
+import clsx from "clsx"
+import emailjs from "@emailjs/browser"
+import { useRef } from "react"
 
 interface IFormData {
   name: string
@@ -11,9 +13,6 @@ interface IFormData {
 }
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false) // Track form submission status
-  const [isSuccess, setIsSuccess] = useState(false) // Track success state for animation
-
   const schema = z.object({
     name: z
       .string({ required_error: "Name is required." })
@@ -39,47 +38,35 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<IFormData>({
     resolver: zodResolver(schema),
   })
 
-  async function onSubmit(data: IFormData) {
-    setIsSubmitting(true) // Start loading animation
+  const form = useRef<HTMLFormElement>(null)
 
-    try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/carlosmatateumateus@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
+  const sendEmail = () => {
+    const serviceID = "service_fdspo7n"
+    const templateID = "template_ts2qeu1"
+    const publicKey = "0lwbgbSj_SJG7wCAY"
+
+    if (form.current) {
+      emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+        () => {
+          reset()
+          alert("Message sent successfully")
+        },
+        (error) => {
+          console.error(error)
         }
       )
-      const result = await response.json()
-      console.log(result)
-
-      // Show success state and reset the form
-      setIsSuccess(true)
-      reset()
-
-      // Revert button to normal after 3 seconds
-      setTimeout(() => {
-        setIsSubmitting(false)
-        setIsSuccess(false)
-      }, 3000)
-    } catch (error) {
-      console.error("Error submitting the form:", error)
-      setIsSubmitting(false) // Revert button in case of error
     }
   }
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(sendEmail)}
+      ref={form}
       className="w-full mt-14 lg:w-[35vw] lg:mt-0 flex flex-col gap-6"
     >
       <div className="flex flex-col">
@@ -125,14 +112,15 @@ export default function ContactForm() {
       </div>
 
       <button
-        className={`bg-black text-white p-2 transition-all duration-300 ease-in-out ${
-          isSubmitting
-            ? "cursor-not-allowed bg-gray-500 animate-pulse"
-            : "hover:bg-[#373737] active:bg-black"
-        } ${isSuccess ? "bg-green-500" : ""}`}
+        className={clsx(
+          "bg-black text-white hover:bg-[#373737] active:bg-black p-2 transition-all duration-300 ease-in-out",
+          {
+            "cursor-not-allowed bg-gray-500 animate-pulse": isSubmitting,
+          }
+        )}
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Sending..." : isSuccess ? "Message Sent!" : "Send"}
+        {isSubmitting ? "Sending..." : "Send"}
       </button>
     </form>
   )

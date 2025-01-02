@@ -100,12 +100,11 @@ export default function Header() {
         )}
       >
         {HEADER_LINKS.map((link) => (
-          <>
+          <div key={link.label}>
             {link.url === pathname ? (
               <span className="text-gray-400 cursor-default">{link.label}</span>
             ) : (
               <NavLink
-                key={link.label}
                 to={link.url}
                 onClick={(e) => handleLinkClick(e, link.url)}
                 className="text- hover:underline"
@@ -113,7 +112,7 @@ export default function Header() {
                 {link.label}
               </NavLink>
             )}
-          </>
+          </div>
         ))}
       </nav>
     </header>
