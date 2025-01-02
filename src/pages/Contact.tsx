@@ -36,13 +36,16 @@ export default function Contact() {
           <div>
             <h2 className="font-semibold text-xl w-[400px]">Social networks</h2>
             <div className="flex gap-2 mt-2">
-              <a href="https://github.com/kamajus">
+              <a href="https://github.com/kamajus" target="_blank">
                 <GithubLogo size={25} />
               </a>
-              <a href="https://dribbble.com/carlosmateus">
+              <a href="https://dribbble.com/carlosmateus" target="_blank">
                 <DribbbleLogo size={25} />
               </a>
-              <a href="https://stackoverflow.com/users/22169144/carlos-mateus">
+              <a
+                href="https://stackoverflow.com/users/22169144/carlos-mateus"
+                target="_blank"
+              >
                 <StackOverflowLogo size={25} />
               </a>
             </div>

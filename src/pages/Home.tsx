@@ -23,7 +23,6 @@ export default function Home() {
           content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
         />
 
-        {/* Facebook Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Carlos Mateus" />
         <meta
@@ -31,7 +30,6 @@ export default function Home() {
           content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
         />
 
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Carlos Mateus" />
         <meta
