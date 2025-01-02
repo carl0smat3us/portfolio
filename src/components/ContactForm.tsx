@@ -46,20 +46,23 @@ export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null)
 
   const sendEmail = () => {
-    const serviceID = "service_fdspo7n"
-    const templateID = "template_ts2qeu1"
-    const publicKey = "0lwbgbSj_SJG7wCAY"
-
     if (form.current) {
-      emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
-        () => {
-          reset()
-          alert("Message sent successfully")
-        },
-        (error) => {
-          console.error(error)
-        }
-      )
+      emailjs
+        .sendForm(
+          import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+          import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+          form.current,
+          import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            reset()
+            alert("Message sent successfully")
+          },
+          (error) => {
+            console.error(error)
+          }
+        )
     }
   }
 
