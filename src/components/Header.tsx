@@ -92,7 +92,7 @@ export default function Header() {
       <nav
         ref={menuRef} // Ref for the menu
         className={clsx(
-          "flex-col md:flex md:flex-row gap-4 font-medium absolute md:static top-16 left-0 right-0 px-[50px] md:px-0 bg-white py-8 md:p-0 transition-transform",
+          "flex-col md:flex md:flex-row gap-4 font-medium absolute md:static top-16 left-0 right-0 md:px-0 bg-white py-8 md:p-0 transition-transform",
           {
             hidden: !isMenuOpen, // Hide menu when `isMenuOpen` is false
             flex: isMenuOpen, // Show menu when `isMenuOpen` is true
@@ -107,7 +107,7 @@ export default function Header() {
               <NavLink
                 to={link.url}
                 onClick={(e) => handleLinkClick(e, link.url)}
-                className="text- hover:underline"
+                className="hover:underline"
               >
                 {link.label}
               </NavLink>

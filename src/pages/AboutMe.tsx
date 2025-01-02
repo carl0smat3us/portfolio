@@ -7,14 +7,14 @@ export default function AboutMe() {
 
       <article
         id="contact"
-        className="lg:flex flex-wrap justify-between py-12 gap-[10%]"
+        className="lg:flex flex-wrap justify-between py-12 gap-[10%] "
       >
         <img
-          className="w-[45%]"
+          className="w-full lg:w-[45%] max-lg:mb-10"
           src="https://placehold.co/400x400"
           alt="Carlos Mateus"
         />
-        <div className="w-[45%]">
+        <div className="w-full lg:w-[45%]">
           <span>Hi, I&rsquo;m</span>
           <h1 className="font-semibold text-4xl mb-6">Carlos Mateus</h1>
           <p className="text-xl">
