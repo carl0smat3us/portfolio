@@ -5,6 +5,7 @@ export const PROJECTS: Project[] = [
     id: "privadodomicilio",
     title: "Privado Domicílio lading page",
     creationYear: 2023,
+    type: "web",
     description:
       "Privado Domicílio is committed to providing specialized and personalized care for seniors and individuals in need, right in the comfort of their own homes. With a dedicated and caring team, we strive to ensure the well-being and quality of life of our clients with every service we provide.",
     skills: [
@@ -15,7 +16,6 @@ export const PROJECTS: Project[] = [
       "Javascript",
       "TypeScript",
     ],
-    type: "web",
     cover: "/projects/privadodomicilio/cover.png",
     photos: [
       {

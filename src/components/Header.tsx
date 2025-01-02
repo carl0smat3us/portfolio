@@ -75,7 +75,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="flex items-center justify-between py-6 sticky top-0 bg-white">
+    <header className="flex items-center justify-between py-6 sticky top-0 z-50 bg-white">
       <NavLink className="font-black text-3xl" to="/">
         C.
       </NavLink>
