@@ -1,25 +1,43 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 import Header from "../components/Header"
 import { CaretLeft } from "@phosphor-icons/react"
 import { PROJECTS } from "../constants"
 import clsx from "clsx"
+import { Helmet } from "react-helmet-async"
 
 export default function Project() {
-  const navigate = useNavigate()
   const { id } = useParams()
 
   const project = PROJECTS.find((p) => p.id === id)
 
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus | {project?.title}</title>
+        <meta name="description" content={project?.description} />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Carlos Mateus" />
+        <meta property="og:description" content={project?.description} />
+        <meta property="og:image" content={project?.cover} />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`Carlos Mateus | ${project?.title}`}
+        />
+        <meta name="twitter:description" content={project?.description} />
+        <meta name="twitter:image" content={project?.cover} />
+      </Helmet>
+
       <Header />
-      <button
-        onClick={() => {
-          navigate("/#projects")
-        }}
-      >
-        <CaretLeft size={20} className="mt-12" />
-      </button>
+      <NavLink to="/projects">
+        <button>
+          <CaretLeft size={20} className="mt-12" />
+        </button>
+      </NavLink>
       <div className="flex flex-wrap justify-between">
         <article
           className={clsx("bg-white", {
@@ -33,7 +51,10 @@ export default function Project() {
             <h2 className="text-xl font-medium">Skills and deliverables</h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {project?.skills.map((skill) => (
-                <span className="text-[#7B7B7B] bg-[#E5E5E5] h-[56px] px-4 flex items-center justify-center">
+                <span
+                  key={skill}
+                  className="text-[#7B7B7B] bg-[#E5E5E5] h-[56px] px-4 flex items-center justify-center"
+                >
                   {skill}
                 </span>
               ))}
@@ -58,8 +79,8 @@ export default function Project() {
             "lg:w-[34%]": project?.type === "mobile",
           })}
         >
-          {project?.photos.map((photo) => (
-            <div className="mb-10">
+          {project?.photos.map((photo, index) => (
+            <div key={index} className="mb-10">
               <img className="mb-4" src={photo.path} />
               <p className="text-gray-400">{photo.label}</p>
             </div>

@@ -11,10 +11,35 @@ import {
 import { PROJECTS } from "../constants"
 import Service from "../components/Service"
 import { NavLink } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 export default function Home() {
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus</title>
+        <meta
+          name="description"
+          content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
+        />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Carlos Mateus" />
+        <meta
+          property="og:description"
+          content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
+        />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Carlos Mateus" />
+        <meta
+          name="twitter:description"
+          content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
+        />
+      </Helmet>
+
       <Header />
 
       <div className="mb-[20vh]" />
@@ -85,8 +110,8 @@ export default function Home() {
           {Array.from(PROJECTS)
             .sort((a, b) => b.creationYear - a.creationYear)
             .slice(0, 4)
-            .map((project, index) => (
-              <ProjectItem {...project} key={index} />
+            .map((project) => (
+              <ProjectItem {...project} key={project.id} />
             ))}
         </div>
       </article>

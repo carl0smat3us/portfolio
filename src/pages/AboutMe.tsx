@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
 
 export default function AboutMe() {
   return (
     <section className="custom-width">
+      <Helmet>
+        <title>Carlos Mateus | About me</title>
+      </Helmet>
+
       <Header />
 
       <article
