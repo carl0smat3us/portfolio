@@ -16,7 +16,7 @@ export default function AboutMe() {
       >
         <img
           className="w-full lg:w-[45%] max-lg:mb-10"
-          src="https://placehold.co/400x400"
+          src="/pnj.jpeg"
           alt="Carlos Mateus"
         />
         <div className="w-full lg:w-[45%]">
