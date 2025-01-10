@@ -138,4 +138,35 @@ export const PROJECTS: Project[] = [
     ],
     preview: "https://www.github.com/kamajus/beeva.git",
   },
+  {
+    id: "tinychat",
+    type: "web",
+    title: "Tinychat",
+    creationYear: 2022,
+    description:
+      "Tinychat is a real-time chat application that leverages WebSocket technology. Built with Python, Flask, and Socket.IO, it provides a seamless and efficient communication platform.",
+    skills: [
+      "Python",
+      "Flask",
+      "Pydantic",
+      "Socket.IO",
+      "MongoDB",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Firebase",
+    ],
+    cover: "/projects/tinychat/cover.png",
+    photos: [
+      {
+        path: "/projects/tinychat/login.png",
+        label: "Login",
+      },
+      {
+        path: "/projects/tinychat/chat.png",
+        label: "Chatroom",
+      },
+    ],
+    preview: "https://github.com/kamajus/tinychat.git",
+  },
 ]
