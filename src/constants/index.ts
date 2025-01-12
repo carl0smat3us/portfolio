@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
   {
     id: "raciuscare",
     title: "Racius Care",
-    creationYear: 2024,
+    creationYear: 2023,
     description:
       "Racius Care is an online store specializing in health and hygiene, focused on promoting well-being. It offers quality products and exceptional customer service.",
     skills: [
@@ -168,5 +168,34 @@ export const PROJECTS: Project[] = [
       },
     ],
     preview: "https://github.com/kamajus/tinychat.git",
+  },
+  {
+    id: "Invoice generator",
+    type: "web",
+    title: "Tinychat",
+    creationYear: 2023,
+    description: "Automated invoice generation in an e-commerce scenario.",
+    skills: [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "WeasyPrint",
+      "Jinja2",
+      "PyQt5",
+      "Docker",
+      "Html && Css",
+    ],
+    cover: "/projects/invoice-generator/cover.png",
+    photos: [
+      {
+        path: "/projects/invoice-generator/gui.png",
+        label: "GUI",
+      },
+      {
+        path: "/projects/invoice-generator/invoice.png",
+        label: "Invoice example",
+      },
+    ],
+    preview: "https://github.com/kamajus/invoice.git",
   },
 ]
