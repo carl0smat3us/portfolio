@@ -201,7 +201,7 @@ export const PROJECTS: Project[] = [
   {
     id: "autospotify",
     type: "web",
-    title: "Autospotify",
+    title: "Autospotify: A Spotify Bot",
     creationYear: 2025,
     description:
       "A bot designed to automatically create Spotify accounts and effortlessly play entire playlists.",
