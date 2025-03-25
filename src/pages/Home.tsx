@@ -96,9 +96,9 @@ export default function Home() {
             <h2 className="font-semibold text-3xl">My work</h2>
             <p className="text-lg">See what I've been working on lately</p>
           </div>
-          <NavLink to="/projects">
-            <button>
-              <CaretRight size={22} />
+          <NavLink to="/projects" preventScrollReset={false}>
+            <button className="flex items-center justify-center gap-2">
+              see more <CaretRight size={22} />
             </button>
           </NavLink>
         </div>

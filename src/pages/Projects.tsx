@@ -1,4 +1,5 @@
 import { useForm, Controller, useWatch } from "react-hook-form"
+import { useEffect } from "react"
 import Header from "../components/Header"
 import { PROJECTS } from "../constants"
 import ProjectItem from "../components/ProjectItem"
@@ -64,6 +65,10 @@ export default function Projects() {
     }
     return 0
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <section className="custom-width">

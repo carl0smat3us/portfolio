@@ -170,9 +170,9 @@ export const PROJECTS: Project[] = [
     preview: "https://github.com/kamajus/tinychat.git",
   },
   {
-    id: "Invoice generator",
+    id: "invoce-generator",
     type: "web",
-    title: "Tinychat",
+    title: "Invoice generator",
     creationYear: 2023,
     description: "Automated invoice generation in an e-commerce scenario.",
     skills: [
@@ -197,5 +197,29 @@ export const PROJECTS: Project[] = [
       },
     ],
     preview: "https://github.com/kamajus/invoice.git",
+  },
+  {
+    id: "autospotify",
+    type: "web",
+    title: "Autospotify",
+    creationYear: 2025,
+    description:
+      "A bot designed to automatically create Spotify accounts and effortlessly play entire playlists.",
+    skills: [
+      "Python",
+      "Selenium",
+      "Automation",
+      "Chrome",
+      "Microsft Edge",
+      "Captcha bypass",
+      "Undetected",
+    ],
+    cover: "/projects/autospotify/cover.png",
+    photos: [
+      {
+        path: "/projects/autospotify/home.png",
+        label: "CLI",
+      },
+    ],
   },
 ]
