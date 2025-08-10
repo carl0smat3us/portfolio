@@ -12,7 +12,6 @@ export default function Header() {
 
   const HEADER_LINKS = [
     { label: "home", url: "/" },
-    { label: "about me", url: "/about" },
     { label: "projects", url: "/projects" },
     { label: "experiences", url: "/experiences" },
     { label: "contact", url: "/contact" },
