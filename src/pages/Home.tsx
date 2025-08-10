@@ -52,11 +52,6 @@ export default function Home() {
             interfaces. Skilled in creating scalable solutions that deliver
             seamless user experiences.
           </p>
-
-          <br />
-          <NavLink to="/about" className="hover:underline">
-            ...more
-          </NavLink>
         </div>
       </article>
 
