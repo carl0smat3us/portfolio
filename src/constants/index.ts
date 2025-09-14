@@ -7,8 +7,7 @@ export const PROJECTS: Project[] = [
 		title: 'Kasa AO: A Real State App',
 		creationYear: 2024,
 		isFinished: false,
-		description:
-			'Kasa AO is an app that makes it easy to sell and rent homes. Developed with React Native, Expo & Supabase, it offers an intuitive and efficient experience for finding and negotiating properties.',
+		description: `<p>Kasa AO is a mobile application designed to facilitate the search and rental of properties in Angola. Developed with React Native, Expo & Supabase, it offers an intuitive and efficient experience for finding and negotiating properties. So far, the main issues we have had are achieving performance and simplicity balance, implementing real-time data sync, and adjusting the interface to fit what Angolan users are used to.</p>`,
 		skills: [
 			'React',
 			'React Native',
@@ -70,8 +69,7 @@ export const PROJECTS: Project[] = [
 		title: 'Autospotify: A bot for Spotify',
 		creationYear: 2025,
 		preview: 'https://github.com/carl0smat3us/autospotify',
-		description:
-			'A bot designed to automatically create Spotify accounts and effortlessly play entire playlists.',
+		description: `AutoSpotify is python project for study puporses that automates a few actions on Spotify, such creating accounts, logging in, searching for tracks, playing music and more. It uses Selenium mainly, and it's designed to work with both Chrome and Microsoft Edge browsers. The bot is undetected and can bypass captchas using 2captcha service.`,
 		skills: [
 			'Python',
 			'Selenium',
@@ -85,7 +83,7 @@ export const PROJECTS: Project[] = [
 		photos: [
 			{
 				path: '/projects/autospotify/home.png',
-				label: 'CLI',
+				label: 'CLI - Main menu',
 			},
 		],
 	},
