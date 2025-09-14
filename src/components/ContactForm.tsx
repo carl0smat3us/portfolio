@@ -45,9 +45,9 @@ export default function ContactForm() {
 
 	const form = useRef<HTMLFormElement>(null);
 
-	const sendEmail = () => {
+	const sendEmail = async () => {
 		if (form.current) {
-			emailjs
+			await emailjs
 				.sendForm(
 					import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
 					import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
@@ -57,7 +57,7 @@ export default function ContactForm() {
 				.then(
 					() => {
 						reset();
-						alert('Message sent successfully');
+						alert('Your message has been sent successfully!');
 					},
 					(error) => {
 						console.error(error);
