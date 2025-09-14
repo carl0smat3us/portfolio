@@ -1,23 +1,25 @@
-import { Project } from "../@types"
+import type { Project } from '../@types';
 
 export default function ProjectItem({
-  id,
-  title,
-  creationYear,
-  cover,
+	id,
+	title,
+	creationYear,
+	isFinished,
+	cover,
 }: Project) {
-  return (
-    <a href={`/project/${id}`}>
-      <div
-        className="border border-black aspect-square bg-[rgb(233,233,233)] bg-cover"
-        style={{
-          backgroundImage: `url(${cover})`,
-        }}
-      />
+	return (
+		<a href={`/project/${id}`}>
+			<div
+				className="border border-black aspect-square bg-[rgb(233,233,233)] bg-cover"
+				style={{
+					backgroundImage: `url(${cover})`,
+				}}
+			/>
 
-      <p className="mt-4 text-lg">
-        {title} ({creationYear})
-      </p>
-    </a>
-  )
+			<p className="mt-4 text-lg">
+				{title} ({creationYear}
+				{isFinished === false && ' - ongoing'})
+			</p>
+		</a>
+	);
 }
