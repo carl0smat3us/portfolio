@@ -41,7 +41,11 @@ export default function Project() {
 			<div className="mb-20">
 				<article className="mb-10">
 					<h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
-					<p className="text-gray-500 mt-4">{project?.description}</p>
+					<div
+						className="text-gray-500 mt-6"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: description comes from a trusted source
+						dangerouslySetInnerHTML={{ __html: project?.description || '' }}
+					/>
 					<article className="mt-5">
 						<h2 className="text-xl font-medium">Skills and deliverables</h2>
 						<div className="mt-6 flex flex-wrap gap-2">
@@ -77,7 +81,7 @@ export default function Project() {
 						{project?.photos.map((photo, _) => (
 							<div key={project.id} className="flex flex-col">
 								<img
-									className="mb-4 rounded-xl border-2 w-full sm:max-w-sm md:max-w-md lg:max-w-full object-cover"
+									className="mb-4 border-2 w-full sm:max-w-sm md:max-w-md lg:max-w-full object-cover"
 									alt={photo.label}
 									src={photo.path}
 								/>

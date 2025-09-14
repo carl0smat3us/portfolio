@@ -3,6 +3,7 @@ import {
 	CaretRight,
 	Cloud,
 	DeviceMobile,
+	Robot,
 } from '@phosphor-icons/react';
 import { Helmet } from 'react-helmet-async';
 import { NavLink } from 'react-router-dom';
@@ -56,13 +57,13 @@ export default function Home() {
 
 			<article
 				id="about"
-				className="h-[50vh] mb-[20vh] flex flex-col items-center justify-center py-12"
+				className="min-h-[50vh] mb-[20vh] flex flex-col items-center justify-center py-12"
 			>
 				<h2 className="font-semibold text-3xl text-center mb-12">
 					What I Offer?
 				</h2>
 
-				<div className="w-full flex justify-between max-lg:flex-wrap">
+				<div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<Service
 						icon={<Browsers size={30} />}
 						title="Website Development"
@@ -77,6 +78,11 @@ export default function Home() {
 						icon={<Cloud size={30} />}
 						title="Backend Solutions"
 						description="Design and implement scalable, secure, and efficient backend systems tailored to your application's needs."
+					/>
+					<Service
+						icon={<Robot size={30} />}
+						title="Webscraping and Automation"
+						description="Develop custom web scraping and automation solutions to streamline data collection and repetitive tasks."
 					/>
 				</div>
 			</article>
