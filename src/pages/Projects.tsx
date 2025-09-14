@@ -73,7 +73,7 @@ export default function Projects() {
   return (
     <section className="custom-width">
       <Helmet>
-        <title>Carlos Mateus | Projects</title>
+        <title>Carlos | Projects</title>
       </Helmet>
 
       <Header />

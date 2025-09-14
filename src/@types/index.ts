@@ -6,6 +6,7 @@ export interface Project {
   skills: string[]
   cover: string
   type: "mobile" | "web"
+  isFinished?: boolean
   photos: {
     path: string
     label: string

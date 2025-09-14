@@ -5,7 +5,7 @@ export default function Experiences() {
   return (
     <section className="custom-width">
       <Helmet>
-        <title>Carlos Mateus | Experiences</title>
+        <title>Carlos | Experiences</title>
       </Helmet>
 
       <Header />
@@ -14,6 +14,7 @@ export default function Experiences() {
         <h1 className="font-semibold text-4xl mt-6">Work experiences</h1>
         <p className="text-gray-500">Peruse my employment background.</p>
       </div>
+
       <article className="mt-5">
         <h2 className="text-xl font-medium">Software Developer Freelancer</h2>
         <span className="text-gray-400 text-sm">2021 - Present</span>
@@ -98,6 +99,8 @@ export default function Experiences() {
           </li>
         </ul>
       </article>
+
+      <div className="h-10" />
     </section>
   )
 }

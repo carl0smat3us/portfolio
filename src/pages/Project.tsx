@@ -2,7 +2,6 @@ import { NavLink, useParams } from "react-router-dom"
 import Header from "../components/Header"
 import { CaretLeft } from "@phosphor-icons/react"
 import { PROJECTS } from "../constants"
-import clsx from "clsx"
 import { Helmet } from "react-helmet-async"
 
 export default function Project() {
@@ -13,7 +12,7 @@ export default function Project() {
   return (
     <section className="custom-width">
       <Helmet>
-        <title>Carlos Mateus | {project?.title}</title>
+        <title>Carlos | {project?.title}</title>
         <meta name="description" content={project?.description} />
         <meta property="og:type" content="website" />
         <meta
@@ -39,15 +38,8 @@ export default function Project() {
         </button>
       </NavLink>
 
-      <div className="flex flex-wrap justify-between">
-        <article
-          className={clsx("bg-white", {
-            "lg:w-[42%]": project?.type === "web",
-            "lg:w-[60%]": project?.type === "mobile",
-          })}
-        >
-          <img className="w-full" src={project?.cover} />
-
+      <div className="mb-20">
+        <article className="mb-10">
           <h1 className="font-semibold text-4xl mt-6">{project?.title}</h1>
           <p className="text-gray-500 mt-4">{project?.description}</p>
           <article className="mt-5">
@@ -79,19 +71,21 @@ export default function Project() {
             </article>
           )}
         </article>
-        <article
-          className={clsx("bg-white", {
-            "lg:w-[50%]": project?.type === "web",
-            "lg:w-[34%]": project?.type === "mobile",
-          })}
-        >
-          {project?.photos.map((photo, index) => (
-            <div key={index} className="mb-10">
-              <img className="mb-4" alt={photo.label} src={photo.path} />
-              <p className="text-gray-400">{photo.label}</p>
-            </div>
-          ))}
-        </article>
+
+        <div>
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {project?.photos.map((photo, index) => (
+              <div key={index} className="flex flex-col">
+                <img
+                  className="mb-4 rounded-xl border-2 w-full sm:max-w-sm md:max-w-md lg:max-w-full object-cover"
+                  alt={photo.label}
+                  src={photo.path}
+                />
+                <p className="text-gray-400">{photo.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

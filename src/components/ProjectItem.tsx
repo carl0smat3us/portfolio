@@ -4,6 +4,7 @@ export default function ProjectItem({
   id,
   title,
   creationYear,
+  isFinished,
   cover,
 }: Project) {
   return (
@@ -16,7 +17,8 @@ export default function ProjectItem({
       />
 
       <p className="mt-4 text-lg">
-        {title} ({creationYear})
+        {title} ({creationYear}
+        {isFinished == false && " - ongoing"})
       </p>
     </a>
   )

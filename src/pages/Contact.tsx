@@ -1,8 +1,4 @@
-import {
-  DribbbleLogo,
-  GithubLogo,
-  StackOverflowLogo,
-} from "@phosphor-icons/react"
+import { TwitterLogo, GithubLogo } from "@phosphor-icons/react"
 import Header from "../components/Header"
 import ContactForm from "../components/ContactForm"
 import { Helmet } from "react-helmet-async"
@@ -11,7 +7,7 @@ export default function Contact() {
   return (
     <section className="custom-width">
       <Helmet>
-        <title>Carlos Mateus | Contact</title>
+        <title>Carlos | Contact</title>
       </Helmet>
       <Header />
 
@@ -34,19 +30,13 @@ export default function Contact() {
             .
           </p>
           <div>
-            <h2 className="font-semibold text-xl w-[400px]">Social networks</h2>
+            <h2 className="font-semibold text-xl w-[400px]">Networks</h2>
             <div className="flex gap-2 mt-2">
-              <a href="https://github.com/kamajus" target="_blank">
+              <a href="https://x.com/carl0smat3us" target="_blank">
+                <TwitterLogo size={25} />
+              </a>
+              <a href="https://github.com/carl0smat3us" target="_blank">
                 <GithubLogo size={25} />
-              </a>
-              <a href="https://dribbble.com/carlosmateus" target="_blank">
-                <DribbbleLogo size={25} />
-              </a>
-              <a
-                href="https://stackoverflow.com/users/22169144/carlos-mateus"
-                target="_blank"
-              >
-                <StackOverflowLogo size={25} />
               </a>
             </div>
           </div>

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <section className="custom-width">
       <Helmet>
-        <title>Carlos Mateus</title>
+        <title>Carlos</title>
         <meta
           name="description"
           content="I’m a Carlos, a software developer with years of experience creating high-quality applications. My passion lies in building intuitive and visually engaging user interfaces while ensuring scalable and seamless solutions tailored to client needs."
@@ -45,7 +45,7 @@ export default function Home() {
       <article className="h-[50vh] mb-[50vh] flex items-center">
         <div>
           <span>Hello I&rsquo;m</span>
-          <h1 className="font-semibold text-4xl mb-6">Carlos Mateus</h1>
+          <h1 className="font-bold text-5xl mb-6">Carlos Mateus</h1>
           <p className="text-lg md:w-[60%] leading-10">
             Experienced software developer passionate about building
             high-quality applications with intuitive and visually appealing user
